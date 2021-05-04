@@ -1,0 +1,59 @@
+{
+    "types": {
+            "appartement": "appartement",
+            "maison": "maison",
+            "terrain": "terrain",
+            "viager": "viager",
+            "vacances": "vacances",
+            "autre": "autre"
+    },
+    "annonces": [{
+            "id": 1,
+            "transaction": "vente",
+            "type": "maison",
+            "title": "Maison de famille",
+            "surface": "120",
+            "lieu": {
+                "rue": "rue de la marre",
+                "numéro": 12,
+                "lieu-dit": "",
+                "commune": "Brest",
+                "ville": "Brest"
+            },
+            "prix": 100000,
+            "photos": {
+                "1": "image1.jpg",
+                "2": "image2.jpg",
+                "3": "image3.jpg",
+                "4": "image4.jpg"
+            },
+            "date": "Tue May 04 2021 14:49:38 GMT+0200",
+            "description": "Maison familiale lorem ipsum",
+            "author": "Thomas"
+        },
+        {
+            "id": 2,
+            "transaction": "location",
+            "type": "appartement",
+            "title": "Appartement étudiant",
+            "surface": "20",
+            "lieu": {
+                "rue": "rue de la rivière",
+                "numéro": 6,
+                "lieu-dit": "",
+                "commune": "Brest",
+                "ville": "Brest"
+            },
+            "prix": 500,
+            "photos": {
+                "1": "image1.jpg",
+                "2": "image2.jpg",
+                "3": "image3.jpg",
+                "4": "image4.jpg"
+            },
+            "date": "Tue May 04 2021 14:49:38 GMT+0200",
+            "description": "Maison familiale lorem ipsum",
+            "author": "Thomas"
+        }
+    ]
+}
