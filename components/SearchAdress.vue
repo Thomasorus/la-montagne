@@ -3,11 +3,17 @@
     <label for="geo-search" style="grid-area: label"
       >Entrez la ville, le code postal ou la rue de votre choix :</label
     >
-    <input type="text" id="geo-search" v-model="search" />
-    <small id="search-error" style="display: none; grid-area: error"
+    <input
+      type="text"
+      id="geo-search"
+      v-model="search"
+      :aria-describedby="error ? 'search-error' : false"
+      :aria-invalid="error ? true : false"
+    />
+    <small v-if="error" id="search-error"
       >Aucune information de lieu n'a été trouvée. Veuillez retenter.</small
     >
-    <ul v-if="adresses" tabindex="0">
+    <ul v-if="adresses && search" tabindex="0">
       <li
         v-for="(adress, index) in adresses.features"
         :key="index"
@@ -29,16 +35,13 @@ export default {
   data() {
     return {
       search: '',
-      adresses: null
+      adresses: null,
+      error: false
     }
   },
   methods: {
     async geoSearch(event) {
       event.preventDefault()
-
-      const searchInput = document.querySelector('#geo-search')
-      const errorMsg = document.querySelector('#search-error')
-
       if (!this.search) {
         searchInput.setAttribute('aria-describedby', 'error')
         errorMsg.setAttribute('style', 'display:block;')
@@ -49,12 +52,10 @@ export default {
         ).then((res) => res.json())
 
         if (addresses.features.length > 0) {
-          searchInput.removeAttribute('aria-describedby')
-          errorMsg.setAttribute('style', 'display:none;')
+          this.error = false
           this.adresses = addresses
         } else {
-          searchInput.setAttribute('aria-describedby', 'error')
-          errorMsg.setAttribute('style', 'display:block;')
+          this.error = true
         }
       }
     },
@@ -87,7 +88,7 @@ li:hover {
   background-color: lightgray;
 }
 
-#error {
+small {
   color: red;
 }
 
