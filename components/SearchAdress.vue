@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <label for="geo-search" style="grid-area: label"
-      >Entrez la ville, le code postale ou la rue de votre choix :</label
+      >Entrez la ville, le code postal ou la rue de votre choix :</label
     >
     <input type="text" id="geo-search" v-model="search" />
     <small id="search-error" style="display: none; grid-area: error"
