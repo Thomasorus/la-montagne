@@ -10,6 +10,6 @@ export default {
       '/geo/': { target: 'https://api-adresse.data.gouv.fr/search/', pathRewrite: {'^/geo/': ''}, changeOrigin: true }  
     },
     buildModules: [
-      '@nuxtjs/composition-api/module'
+      'nuxt-vite'
     ]
   }

@@ -10,5 +10,8 @@
     "@nuxtjs/proxy": "^2.1.0",
     "json-server": "^0.16.3",
     "nuxt": "^2.15.4"
+  },
+  "devDependencies": {
+    "nuxt-vite": "^0.0.37"
   }
 }
