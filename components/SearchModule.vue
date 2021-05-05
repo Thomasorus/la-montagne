@@ -1,8 +1,8 @@
 <template>
   <section aria-label="Recherche de bien">
-    <form>
-      <SearchAchatLoc v-model="search.achatloc" />
-      <SearchTypeBien v-model="search.typebien" />
+    <form @submit="checkForm" action="" method="post">
+      <SearchAchatLoc v-model="search.achatloc" :formError="search.achatloc" />
+      <SearchTypeBien v-model="search.typebien" :formError="search.typebien" />
       <SearchAdress v-model="search.adress" />
       <div class="splitter">
         <SearchPriceRangeMin v-model="search.min" />
@@ -17,7 +17,7 @@
         @click="addPhotos"
       />
       <br />
-      <button @click="chercher">Chercher parmi les annonces</button>
+      <button type="submit" value="Submit">Chercher parmi les annonces</button>
     </form>
   </section>
 </template>
@@ -27,20 +27,37 @@ export default {
   data() {
     return {
       search: {
-        achatloc: '',
-        typebien: '',
-        adress: '',
-        min: '',
-        max: '',
-        elargir: '',
+        achatloc: null,
+        typebien: null,
+        adress: null,
+        min: null,
+        max: null,
+        elargir: null,
         photos: false
       }
     }
   },
   methods: {
-    chercher(event) {
-      event.preventDefault()
-      console.log(this.search)
+    checkForm: function (e) {
+      if (
+        this.search.achatloc &&
+        this.search.typebien &&
+        this.search.adress &&
+        this.search.elargir
+      ) {
+        return true
+      }
+
+      this.errors = []
+
+      if (!this.search.achatloc) {
+        this.search.achatloc = true
+      }
+      if (!this.search.typebien) {
+        this.search.typebien = true
+      }
+
+      e.preventDefault()
     },
     addPhotos(event) {
       if (this.search.photos) {
