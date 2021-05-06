@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label for="price-max">Maximum</label>
+    <label for="price-max">Montant maximum</label>
     <input type="number" id="price-max" @change="handleClick" min="0" />
   </div>
 </template>
@@ -15,10 +15,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-input[type='number'] {
-  width: 50% !important;
-  max-width: 100px;
-}
-</style>

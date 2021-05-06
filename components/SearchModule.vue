@@ -1,14 +1,14 @@
 <template>
   <section aria-label="Recherche de bien">
     <form @submit="checkForm" action="" method="post">
-      <SearchAchatLoc v-model="search.achatloc" :formError="search.achatloc" />
-      <SearchTypeBien v-model="search.typebien" :formError="search.typebien" />
-      <SearchAdress v-model="search.adress" />
+      <SearchAchatLoc v-model="search.achatloc" :formError="error.achatloc" />
+      <SearchTypeBien v-model="search.typebien" :formError="error.typebien" />
+      <SearchAdress v-model="search.adress" :formError="error.adress" />
       <div class="splitter">
         <SearchPriceRangeMin v-model="search.min" />
-        <SearchPriceRangeMin v-model="search.max" />
+        <SearchPriceRangeMax v-model="search.max" />
       </div>
-      <SearchElargir v-model="search.elargir" />
+      <SearchElargir v-model="search.elargir" :formError="error.elargir" />
       <label for="photos">Uniquement avec photos</label>
       <input
         type="checkbox"
@@ -34,32 +34,50 @@ export default {
         max: null,
         elargir: null,
         photos: false
+      },
+      error: {
+        achatloc: false,
+        typebien: false,
+        adress: false,
+        elargir: false
       }
     }
   },
   methods: {
     checkForm: function (e) {
+      if (!this.search.achatloc) {
+        this.error.achatloc = true
+      } else {
+        this.error.achatloc = false
+      }
+      if (!this.search.typebien) {
+        this.error.typebien = true
+      } else {
+        this.error.typebien = false
+      }
+      if (!this.search.adress) {
+        this.error.adress = true
+      } else {
+        this.error.adress = false
+      }
+      if (!this.search.elargir) {
+        this.error.elargir = true
+      } else {
+        this.error.elargir = false
+      }
+
       if (
-        this.search.achatloc &&
-        this.search.typebien &&
-        this.search.adress &&
-        this.search.elargir
+        this.error.achatloc === false &&
+        this.error.typebien === false &&
+        this.error.adress === false &&
+        this.error.elargir === false
       ) {
         return true
       }
 
-      this.errors = []
-
-      if (!this.search.achatloc) {
-        this.search.achatloc = true
-      }
-      if (!this.search.typebien) {
-        this.search.typebien = true
-      }
-
       e.preventDefault()
     },
-    addPhotos(event) {
+    addPhotos() {
       if (this.search.photos) {
         this.search.photos = false
       } else {

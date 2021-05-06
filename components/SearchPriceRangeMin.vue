@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label for="price-min">Minimum</label>
+    <label for="price-min">Montant minimum</label>
     <input type="number" id="price-min" @change="handleClick" min="0" />
   </div>
 </template>

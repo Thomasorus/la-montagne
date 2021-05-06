@@ -45,11 +45,30 @@
       @click="handleClick"
     />
     <label for="elargir20">20km</label>
+    <small v-if="error" id="achatloc-error">
+      Veuillez sélectionner une option</small
+    >
   </div>
 </template>
 
 <script>
 export default {
+  props: ['formError'],
+  data() {
+    return {
+      error: false
+    }
+  },
+  watch: {
+    formError: function (newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.error = newVal
+        if (this.error !== true) {
+          this.error = false
+        }
+      }
+    }
+  },
   methods: {
     handleClick(event) {
       this.$emit('input', event.target.value)
@@ -57,3 +76,12 @@ export default {
   }
 }
 </script>
+
+
+
+<style scoped>
+small {
+  display: block;
+  color: red;
+}
+</style>

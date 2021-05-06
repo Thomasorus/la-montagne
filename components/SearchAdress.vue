@@ -32,11 +32,22 @@
 
 <script>
 export default {
+  props: ['formError'],
   data() {
     return {
       search: '',
       adresses: null,
       error: false
+    }
+  },
+  watch: {
+    formError: function (newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.error = newVal
+        if (this.error !== true) {
+          this.error = false
+        }
+      }
     }
   },
   methods: {
