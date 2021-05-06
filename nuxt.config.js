@@ -12,7 +12,6 @@ export default {
     buildModules: [
       'nuxt-vite'
     ],
-    target: 'static',
     build: {
       parallel: false,
       cache: false,
