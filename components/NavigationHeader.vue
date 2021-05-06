@@ -7,7 +7,7 @@
       <li>
         <NuxtLink to="/annonces">Annonces</NuxtLink>
       </li>
-      <li>
+      <!-- <li>
         <NuxtLink to="/annonces/neuf">Neuf</NuxtLink>
       </li>
       <li>
@@ -18,7 +18,7 @@
       </li>
       <li>
         <NuxtLink to="/publier">Passez votre annonce</NuxtLink>
-      </li>
+      </li> -->
       <!-- <li>
         <NuxtLink to="/mailing">Alerte Mail</NuxtLink>
       </li> -->
