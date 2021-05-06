@@ -1,18 +1,9 @@
 {
   "name": "la-montagne",
   "scripts": {
-    "db": "json-server --watch db.json --port 3001 ",
-    "dev": "nuxt & json-server --watch db.json --port 3001",
-    "build": "json-server --watch db.json --port 3001 & nuxt build",
-    "generate": "nuxt generate",
-    "start": "json-server --watch db.json --port 3001 & nuxt start"
+    "start": "json-server --watch db.json"
   },
   "dependencies": {
-    "@nuxtjs/proxy": "^2.1.0",
-    "json-server": "^0.16.3",
-    "nuxt": "^2.15.4"
-  },
-  "devDependencies": {
-    "nuxt-vite": "^0.0.37"
+    "json-server": "^0.16.3"
   }
 }
