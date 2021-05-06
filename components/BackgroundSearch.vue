@@ -3,12 +3,7 @@
     <picture>
       <source type="image/webp" :srcset="webp" />
 
-      <img
-        loading="lazy"
-        :src="image"
-        :srcset="jpg"
-        alt="Les montagnes d'Auvergne"
-      />
+      <img loading="lazy" :src="image" :srcset="jpg" />
     </picture>
     <SearchModule />
   </div>
