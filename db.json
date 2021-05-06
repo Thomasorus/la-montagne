@@ -12,7 +12,9 @@
             "transaction": "vente",
             "type": "maison",
             "title": "Maison de famille",
+            "slug": "maison-de-famille-1",
             "surface": "120",
+            "pieces": 5,
             "lieu": {
                 "rue": "rue de la marre",
                 "numéro": 12,
@@ -22,13 +24,12 @@
             },
             "prix": 100000,
             "photos": {
-                "1": "image1.jpg",
-                "2": "image2.jpg",
-                "3": "image3.jpg",
-                "4": "image4.jpg"
+                "1": "1-image1.jpg",
+                "2": "1-image2.jpg",
+                "3": "1-image3.jpg"
             },
             "date": "Tue May 04 2021 14:49:38 GMT+0200",
-            "description": "Maison familiale lorem ipsum",
+            "description": "Cette agréable maison familiale vous séduira par son cadre et sa proximité avec les écoles et la gare ! Elle comprend au rdc une entrée avec rangement...",
             "author": "Thomas"
         },
         {
@@ -36,23 +37,24 @@
             "transaction": "location",
             "type": "appartement",
             "title": "Appartement étudiant",
+            "slug": "appartement-etudiant-2",
             "surface": "20",
+            "pieces": 2,
             "lieu": {
                 "rue": "rue de la rivière",
                 "numéro": 6,
                 "lieu-dit": "",
-                "commune": "Brest",
-                "ville": "Brest"
+                "commune": "Quimper",
+                "ville": "Quimper"
             },
             "prix": 500,
             "photos": {
-                "1": "image1.jpg",
-                "2": "image2.jpg",
-                "3": "image3.jpg",
-                "4": "image4.jpg"
+                "1": "2-image1.jpg",
+                "2": "2-image2.jpg",
+                "3": "2-image3.jpg"
             },
             "date": "Tue May 04 2021 14:49:38 GMT+0200",
-            "description": "Maison familiale lorem ipsum",
+            "description": "Bel appartement meublé de 20m2 composé de 2 pièces dont 1 belle chambre, une grand séjour ouvert sur la cuisine américaine équipée.",
             "author": "Thomas"
         }
     ]
