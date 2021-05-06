@@ -1,11 +1,12 @@
 <template>
   <div>
-    <p v-if="$fetchState.pending">Loading....</p>
-    <p v-else-if="$fetchState.error">Error while fetching mountains</p>
+    <p v-if="$fetchState.pending">Chargement des annonces....</p>
+    <p v-else-if="$fetchState.error">
+      Erreur lors de la réception des annonces
+    </p>
     <ul v-else>
       <li v-for="(annonce, index) in annonces" :key="index">
-        {{ annonce.title }}
-        {{ annonce.prix }}
+        <AnnonceCard v-bind:annonce="annonce" />
       </li>
     </ul>
   </div>
@@ -25,3 +26,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: var(--s0);
+}
+</style>
