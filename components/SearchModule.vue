@@ -1,6 +1,6 @@
 <template>
   <section aria-label="Recherche de bien">
-    <form @submit="checkForm" action="" method="post">
+    <form @submit="checkForm" action="/annonces" method="get">
       <SearchAchatLoc v-model="search.achatloc" :formError="error.achatloc" />
       <SearchTypeBien v-model="search.typebien" :formError="error.typebien" />
       <SearchAdress v-model="search.adress" :formError="error.adress" />
@@ -21,6 +21,7 @@
     </form>
   </section>
 </template>
+
 
 <script>
 export default {
@@ -73,8 +74,11 @@ export default {
         this.error.elargir === false
       ) {
         return true
+      } else {
+        setTimeout(() => {
+          document.querySelector('[aria-invalid="true"]').focus()
+        }, 100)
       }
-
       e.preventDefault()
     },
     addPhotos() {
