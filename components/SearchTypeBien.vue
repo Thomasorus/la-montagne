@@ -1,8 +1,14 @@
 <template>
   <div>
     <label for="type-bien">Type de bien</label>
-    <select id="type-bien">
-      <option value="null">Sélectionner le type de bien</option>
+    <select
+      id="type-bien"
+      :aria-describedby="error ? 'type-error' : false"
+      :aria-invalid="error ? true : false"
+    >
+      <option value="null" @click="handleClick">
+        Sélectionner le type de bien
+      </option>
       <option
         v-for="(type, index) in types"
         :key="index"
@@ -12,8 +18,8 @@
         {{ type }}
       </option>
     </select>
-    <small v-if="error" id="achatloc-error">
-      Veuillez choisir entre location et achat</small
+    <small v-if="error ? true : false" id="type-error" role="alert">
+      Veuillez choisir un type de bien</small
     >
   </div>
 </template>
@@ -39,8 +45,13 @@ export default {
   },
   methods: {
     handleClick(event) {
-      this.error = false
-      this.$emit('input', event.target.value)
+      if (event.target.value !== 'null') {
+        this.error = false
+        this.$emit('input', event.target.value)
+      } else {
+        this.error = true
+        this.$emit('input', 'null')
+      }
     }
   },
   async fetch() {

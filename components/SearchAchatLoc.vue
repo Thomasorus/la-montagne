@@ -9,6 +9,8 @@
       id="location"
       value="location"
       @click="handleClick"
+      :aria-describedby="error ? 'achatloc-error' : false"
+      :aria-invalid="error ? true : false"
     />
     <label for="acheter">Acheter</label>
     <input
@@ -17,6 +19,8 @@
       id="acheter"
       value="achat"
       @click="handleClick"
+      :aria-describedby="error ? 'achatloc-error' : ''"
+      :aria-invalid="error ? true : false"
     />
     <small v-if="error" id="achatloc-error">
       Veuillez choisir entre location et achat</small

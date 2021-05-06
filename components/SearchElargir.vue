@@ -8,6 +8,8 @@
       id="elargir0"
       value="0"
       @click="handleClick"
+      :aria-describedby="error ? 'elargir-error' : false"
+      :aria-invalid="error ? true : false"
     />
     <label for="elargir0">Non</label>
 
@@ -17,6 +19,8 @@
       id="elargir2"
       value="2"
       @click="handleClick"
+      :aria-describedby="error ? 'elargir-error' : false"
+      :aria-invalid="error ? true : false"
     />
     <label for="elargir2">2km</label>
 
@@ -26,6 +30,8 @@
       id="elargir5"
       value="5"
       @click="handleClick"
+      :aria-describedby="error ? 'elargir-error' : false"
+      :aria-invalid="error ? true : false"
     />
     <label for="elargir5">5km</label>
 
@@ -35,6 +41,8 @@
       id="elargir10"
       value="10"
       @click="handleClick"
+      :aria-describedby="error ? 'elargir-error' : false"
+      :aria-invalid="error ? true : false"
     />
     <label for="elargir10">10km</label>
     <input
@@ -43,9 +51,11 @@
       id="elargir20"
       value="20"
       @click="handleClick"
+      :aria-describedby="error ? 'elargir-error' : false"
+      :aria-invalid="error ? true : false"
     />
     <label for="elargir20">20km</label>
-    <small v-if="error" id="achatloc-error">
+    <small v-if="error" id="elargir-error">
       Veuillez sélectionner une option</small
     >
   </div>
