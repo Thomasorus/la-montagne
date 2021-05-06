@@ -50,6 +50,10 @@ a:hover {
     color: var(--hover);
 }
 
+p a {
+    text-decoration: underline;
+}
+
 input[type="text"],
 input[type="number"],
 input[type="search"] {
@@ -103,4 +107,8 @@ button {
     position: absolute;
     white-space: nowrap;
     width: 1px;
+}
+
+main>*+* {
+    margin-top: var(--s0);
 }
