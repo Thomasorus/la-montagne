@@ -5,7 +5,7 @@
     "dev": "nuxt & json-server --watch db.json --port 3001",
     "build": "json-server --watch db.json --port 3001 & nuxt build",
     "generate": "nuxt generate",
-    "start": "json-server --watch db.json --port 3001 & nuxt start"
+    "start": "nuxt start"
   },
   "dependencies": {
     "@nuxtjs/proxy": "^2.1.0",
