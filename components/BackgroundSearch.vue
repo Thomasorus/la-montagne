@@ -1,6 +1,6 @@
 <template>
   <div class="search-wrapper">
-    <picture>
+    <picture aria-hidden="true">
       <source type="image/webp" :srcset="webp" />
 
       <img loading="lazy" :src="image" :srcset="jpg" />
