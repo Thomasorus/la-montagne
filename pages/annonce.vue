@@ -1,35 +1,29 @@
 <template>
   <div class="wrapper">
-    <p v-if="$fetchState.pending">Récupération de l'annonce...</p>
-    <p v-else-if="$fetchState.error">
-      Une erreur est survenue. Impossible de récupérer l'annonce.
-    </p>
-    <div v-else>
-      <article>
-        <div class="image">
-          <Gallery :images="annonce[0].photos" :alt="annonce[0].title" />
-        </div>
-        <div class="description">
-          <div>
-            <i>{{ annonce[0].transaction }}</i>
-            <div class="title">
-              <h2>{{ annonce[0].title }}</h2>
-              <strong>
-                <Price v-bind:price="annonce[0].prix" />
-                <PerMonth v-if="annonce[0].transaction == 'location'" />
-              </strong>
-            </div>
-            <div class="metas">
-              {{ annonce[0].lieu.ville }} -
-              <Surface v-bind:surface="annonce[0].surface" /> -
-              {{ annonce[0].pieces }} pièces
-            </div>
+    <article>
+      <div class="image">
+        <Gallery :images="annonce.photos" :alt="annonce.title" />
+      </div>
+      <div class="description">
+        <div>
+          <i>{{ annonce.transaction }}</i>
+          <div class="title">
+            <h2>{{ annonce.title }}</h2>
+            <strong>
+              <Price v-bind:price="annonce.prix" />
+              <PerMonth v-if="annonce.transaction == 'location'" />
+            </strong>
           </div>
-
-          <p>{{ annonce[0].description }}</p>
+          <div class="metas">
+            {{ annonce.lieu.ville }} -
+            <Surface v-bind:surface="annonce.surface" /> -
+            {{ annonce.pieces }} pièces
+          </div>
         </div>
-      </article>
-    </div>
+
+        <p>{{ annonce.description }}</p>
+      </div>
+    </article>
   </div>
 </template>
 
@@ -40,10 +34,12 @@ export default {
       annonce: null
     }
   },
-  async fetch() {
-    this.annonce = await fetch(
-      `http://localhost:3001/annonces?slug=${this.$route.query.slug}`
-    ).then((res) => res.json())
+  async asyncData({ $axios, route }) {
+    const data = await $axios.$get(
+      `http://localhost:3001/annonces?slug=${route.query.slug}`
+    )
+    const annonce = data[0]
+    return { annonce }
   }
 }
 </script>
