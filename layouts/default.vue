@@ -4,14 +4,12 @@
     <main>
       <Nuxt />
     </main>
-    <footer>
+    <!-- <footer>
       <ul>
         <li>Lien 1</li>
         <li>Lien 2</li>
       </ul>
-    </footer>
+    </footer> -->
   </div>
 </template>
-
-<style scoped>
-</style>
+ 
