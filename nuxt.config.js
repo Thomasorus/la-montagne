@@ -12,6 +12,7 @@ export default {
     buildModules: [
       'nuxt-vite'
     ],
+    buildDir: 'dist',
     build: {
       parallel: false,
       cache: false,
