@@ -1,6 +1,6 @@
 # La montagne NuxtJS Training
 
-An exercise to learn Nuxt and re-train on VueJS. Done in two days before a job interview.
+An exercise to learn Nuxt and re-train on VueJS. Done in two days to refresh myself for a job interview. Code is probably ugly and non optimized.
 
 ## How to see
 
