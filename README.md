@@ -22,11 +22,11 @@ Images are treated with the `images.sh` bash script.
 
 ## Screens
 
-[Homepage And Search](image1.png)
+![Homepage And Search](image1.png)
 The search is the more complex component due to error handling. Errors are detected per input and should respect RGAA standards.
 
-[Announces listing](image2.png)
+![Announces listing](image2.png)
 Listing is simple but present some accessibility details, like the use of `<abbr>` for *Euro*, *M2* and */* when used in *amount / month*.
 
-[Announce page](image3.png)
+![Announce page](image3.png)
 The announce page has a simple image selection, not very optimised.
