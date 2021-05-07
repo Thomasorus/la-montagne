@@ -1,3 +1,5 @@
+![Homepage And Search](image1.png)
+
 # La montagne NuxtJS Training
 
 An exercise to learn Nuxt and re-train on VueJS. Done in two days before a job interview.
